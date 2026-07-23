@@ -106,7 +106,7 @@ jobs:
       actions: write
       contents: read
     steps:
-      - name: 安装环境依赖+初始化源码仓库及llvm-Clang18工具链
+       - name: 安装环境依赖+初始化源码仓库及llvm-Clang18工具链
         run: |
           rm -rf kernel_workspace
           mkdir kernel_workspace
@@ -130,9 +130,9 @@ jobs:
           rm -f ./ccache &
           
           echo "正在克隆源码仓库..."
-          aria2c -s16 -x16 -k1M \"https://github.com/OnePlusOSS/android_kernel_common_oneplus_sm8750/archive/refs/heads/oneplus/sm8750_b_16.0.0_oneplus_ace5_pro.zip" \-o common.zip && \
-          unzip -q common.zip && \
-          mv "android_kernel_common_oneplus_sm8750-oneplus-sm8750_b_16.0.0_oneplus_ace5_pro" common && \
+          aria2c -s16 -x16 -k1M "https://github.com/OnePlusOSS/android_kernel_common_oneplus_sm8750/archive/refs/heads/oneplus/sm8750_b_16.0.0_oneplus_ace5_pro.zip" -o common.zip && 
+          unzip -q common.zip && 
+          mv "android_kernel_common_oneplus_sm8750-oneplus-sm8750_b_16.0.0_oneplus_ace5_pro" common && 
           rm -f common.zip
           
           echo "正在克隆llvm-clang18工具链..." &&
